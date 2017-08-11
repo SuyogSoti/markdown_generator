@@ -1,7 +1,13 @@
+let fs = require('fs')
 let showdown = require('showdown')
 
 let converter = new showdown.Converter()
-let text = '#hello, markdown!'
-let html = converter.makeHtml(text)
+converter.setFlavor('github')
+let content = fs.readFileSync('./test/markdown.md').toString()
 
-console.log(html)
+console.log(content)
+
+// let html = converter.makeHtml(content.toString())
+
+// fs.writeFileSync('./test/markdown.html', html)
+// console.log(html)
