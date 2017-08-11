@@ -1,0 +1,29 @@
+{
+  "name": "markdown_generator",
+  "version": "0.0.1",
+  "description": "Connects to a data source in order to dynamically generate markdown files to be converted to different formats.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuyogSoti/markdown_generator.git"
+  },
+  "author": "Suyog Soti <suyog.soti@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SuyogSoti/markdown_generator/issues"
+  },
+  "homepage": "https://github.com/SuyogSoti/markdown_generator#readme",
+  "devDependencies": {
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
