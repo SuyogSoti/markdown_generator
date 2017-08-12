@@ -21,13 +21,35 @@ let content = fs.readFileSync('./test/markdown.md').toString()
 
 generator.generateJS(content)
     .then(javascript => generator.generateMarkdown(javascript))
-    .then(markdown => console.log(markdown))
+    .then(markdown => {
+        let html = converter.makeHtml(markdown.toString())
+        let preLoad = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Output for the template</title>
+    <link rel="stylesheet" href="test/markdown.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="output.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+    <div class="content">
+        `
+        let postLoad = `
+    </div>
+</body>
+</html>
+        `
+        html = preLoad + html.toString() + postLoad
+        fs.writeFile("output.html", html.toString(), (error) => {
+            if (error) {
+                console.log(error)
+            }else{
+                console.log("Done!")
+            }
+        })
+    })
 
 process.on('unhandledRejection', (reason) => {
     console.log(reason);
 });
-
-// let html = converter.makeHtml(content.toString())
-
-// fs.writeFileSync('./test/markdown.html', html)
-// console.log(html)

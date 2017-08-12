@@ -12,6 +12,7 @@ The is more powerful that than you think for the following reasons.
 ### The Cons
 + JavaScript is asynchronous therefore is harder to program in such a setting (Learn Promises - they help make everything synchronous when you need it)
 + markdown is limited (Can be solved with proper CSS files)
+    + test nested stuff
 
 *NOTE*: Nested script tags are not allowed
 
@@ -19,7 +20,7 @@ The is more powerful that than you think for the following reasons.
 let i = 0;
 </script>
 | Tables | Tables|
-|--------|-------|
+|:-------|:------|
 <script>
 for(; i<10; i++){
     console.log("| Tables | Tables |")
