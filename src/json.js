@@ -17,7 +17,7 @@ exports.connect = (db_absolute_path) => new Promise((resolve, reject) => {
                 resolve(JSON.parse(stuff.toString()))
             })
         }else{
-            reject("File does not exist!")
+            reject("Error: File does not exist!")
         }
     })
 })

@@ -1,4 +1,5 @@
 let fs = require('fs')
+let generator = require('./src/generator')
 let jConnect = require('./src/json')
 let showdown = require('showdown')
 
@@ -16,9 +17,12 @@ jConnect.connect(testJson)
         (result) => {
            console.log(result[0].name)
         }
-    ).catch(e => console.log("Error: " + e.toString()))
+    ).catch(e => console.log(e.toString()))
 
-console.log(content)
+generator.generateJS(content)
+    .then(javascript => {
+        console.log(javascript)
+    }).catch(e => console.log(e))
 
 // let html = converter.makeHtml(content.toString())
 
