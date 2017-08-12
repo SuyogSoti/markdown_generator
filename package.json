@@ -27,6 +27,7 @@
     "eslint-plugin-standard": "^3.0.1"
   },
   "dependencies": {
+    "eval": "^0.1.2",
     "showdown": "^1.7.2"
   }
 }
