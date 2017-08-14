@@ -16,6 +16,26 @@ The is more powerful that than you think for the following reasons.
 
 *NOTE*: Nested script tags are not allowed
 
+<style>
+    h1{
+        color: red;
+    }
+</style>
+
+Please notice that the title is in red because of the following style injection
+
+\`\`\`css
+<style>
+    h1{
+        color: red;
+    }
+</style>
+
+\`\`\`
+
+Also note that \` and \\ are escape characters so you must treat them with a \\ in front of it when writing markdown
+
+
 <script>
 let i = 0;
 </script>
@@ -23,6 +43,23 @@ let i = 0;
 |:-------|:------|
 <script>
 for(; i<10; i++){
+    console.log("| Tables | Tables |")
+</script>
+| lol | lol |
+<script>
+}
+</script>
+
+<script>
+let j = 0;
+</script>
+
+# This is a test for the alignment
+| Tables | Tables |
+|:-------|:-------|
+
+<script>
+for(; j<10; j++){
     console.log("| Tables | Tables |")
 }
 </script>

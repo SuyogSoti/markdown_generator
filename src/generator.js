@@ -13,7 +13,9 @@ exports.generateJS = (content) => new Promise((resolve, reject) => {
         content = content.split(/<script>|<\/script>/)
         for (let i in content) {
             if (i%2 == 0) {
-                content[i] = content[i].substring(0, content[i].length - 1)
+                if (i != 0) {
+                    content[i] = content[i].substring(1, content[i].length - 1)
+                }
                 js += "console.log(`" + content[i] + "`)\n"
             } else {
                 js += content[i]

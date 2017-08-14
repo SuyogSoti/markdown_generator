@@ -6,6 +6,8 @@ const showdown = require('showdown')
 // Defailt showdown configuration that is necessary
 const converter = new showdown.Converter()
 converter.setFlavor('github')
+converter.setOption('backslashEscapesHTMLTags', false)
+console.log(converter.getOptions())
 
 // get the text fromt the file
 // FIXME: Make sure that this is a commandline arguement
