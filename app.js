@@ -6,8 +6,8 @@ const showdown = require('showdown')
 // Defailt showdown configuration that is necessary
 const converter = new showdown.Converter()
 converter.setFlavor('github')
-converter.setOption('backslashEscapesHTMLTags', false)
-console.log(converter.getOptions())
+// converter.setOption('backslashEscapesHTMLTags', false)
+// console.log(converter.getOptions())
 
 // get the text fromt the file
 // FIXME: Make sure that this is a commandline arguement
@@ -53,5 +53,5 @@ generator.generateJS(content)
     })
 
 process.on('unhandledRejection', (reason) => {
-    console.log(reason);
-});
+    console.log(reason)
+})

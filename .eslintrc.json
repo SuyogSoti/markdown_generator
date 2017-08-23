@@ -1,5 +1,4 @@
 {
-    //"extends": "standard",
     "env": {
         "browser": false,
         "commonjs": true,
